@@ -1,11 +1,16 @@
-
 import './App.css';
+import {Routes,Route} from "react-router-dom"
+import Home from "./Home"
+import Error from './Error';
+import MovieComponent from './MovieComponent';
 
-function App() {
+const App=()=> {
   return (
-    <div className="App">
-      
-    </div>
+        <Routes>
+          <Route path='/' element={<Home/>}/>
+          <Route path='movie/:id' element={<MovieComponent/>}/>
+          <Route path='*' element={<Error/>}/>
+        </Routes>
   );
 }
 
