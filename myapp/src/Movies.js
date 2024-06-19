@@ -28,13 +28,10 @@ const Movies = () => {
             <h2>{movieTitle.length >=15 ? `${movieTitle}...` : movieTitle}</h2>
             <img src={Poster==="N/A"?imgurl : Poster} alt="#" />
             <h3>{Year}</h3>
-
-            </div>
+           </div>
         </div>
-
             </NavLink>
-       
-   })}
+       })}
     </div>
 
     </section>
