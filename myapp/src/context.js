@@ -1,7 +1,7 @@
 
 import React, { useContext, useEffect, useState } from "react";
 
-export const api_url = `http://www.omdbapi.com/?apikey=${process.env.REACT_APP_MYAPI_KEY}`;
+export const api_url = `https://www.omdbapi.com/?apikey=${process.env.REACT_APP_MYAPI_KEY}`;
 
 // Create context (warehouse) - it works just like a parent from which child can get data anytime
 const AppContext = React.createContext();

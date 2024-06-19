@@ -10,7 +10,7 @@
 
 :root {
   --text-clr: rgba(0, 0, 0, 0.8);
-  --bg-clr:rgba(255, 0, 0, 0.904); /* Red color for body background */
+  --bg-clr:rgba(255, 94, 0, 0.836);
   --border-clr: rgb(156, 176, 193);
   --hover-text-clr: #fff; /* White text on hover */
 }
