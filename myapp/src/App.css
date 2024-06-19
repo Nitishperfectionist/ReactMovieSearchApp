@@ -1,20 +1,19 @@
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@400;500&family=Lora:wght@400;500&family=Poppins:wght@400;600&display=swap");
 
-/* plz subsribe to thapa technical channel 
-          https://www.youtube.com/thapatechnical
-         */
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@400;500&family=Lora:wght@400;500&family=Poppins:wght@400;600&display=swap");
 
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
 
 :root {
-  --text-clr:#6c6c4a;
-  --bg-clr:#f2f4fc;
+  --text-clr: rgba(0, 0, 0, 0.8);
+  --bg-clr:rgba(255, 0, 0, 0.904); /* Red color for body background */
   --border-clr: rgb(156, 176, 193);
+ /* --hover-bg-clr: rgba(0, 0, 0, 0.8);*/
+  --hover-text-clr: #fff; /* White text on hover */
 }
 
 html {
@@ -37,7 +36,6 @@ a {
 }
 
 img {
-  /* width: 25rem; */
   min-width: 10rem;
   max-height: 30rem;
   margin: 1rem 0;
@@ -45,7 +43,7 @@ img {
   transition: all 0.3s linear;
 }
 
-/* resuable code  */
+/* Reusable code */
 .container {
   max-width: 140rem;
   margin: auto;
@@ -53,9 +51,8 @@ img {
 }
 
 .grid {
-  /* width: 100%; */
   display: grid;
-  gap: 3rem;
+  gap: 0; /* Removed gaps */
 }
 
 .grid-4-col {
@@ -66,16 +63,55 @@ img {
   width: 25rem;
   max-width: 30rem;
   min-height: 30rem;
-  /* background-color: #fafaff; */
-  /* padding: 2rem; */
   border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  overflow: hidden;
+}
 
+.card:hover {
+  transform: translateY(-5px);
+  background-color: var(--hover-bg-clr); /* Black background on hover */
+}
+
+.card .title {
+  font-size: 2.8rem;
+  color: var(--text-clr);
+  font-weight: bold;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover .title {
+  opacity: 0; /* Hide title on hover */
+}
+
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--hover-bg-clr); /* Black overlay on hover */
+  opacity: 0;
+  transition: opacity 0.3s ease;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* search css  */
+.card:hover .card-overlay {
+  opacity: 1;
+}
+
+.card-overlay p {
+  color: var(--hover-text-clr);
+  font-size: 1.8rem;
+}
+
+/* Search CSS */
 .search-section {
   margin: auto;
   text-align: center;
@@ -86,12 +122,9 @@ input {
   width: 30rem;
   border-radius: 100px;
   border: none;
-  border: 1px solid var(--border-clr);
   padding: 1rem 2rem;
   font-size: 1.8rem;
-  /* border-color: var(--border-clr); */
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
-    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
   outline: none;
   margin-top: 2rem;
 }
@@ -102,8 +135,7 @@ input {
   font-size: 1.8rem;
 }
 
-/* Single Movie css code  */
-
+/* Single Movie CSS code */
 .movie-section {
   width: 100%;
   height: 100vh;
@@ -127,12 +159,10 @@ input {
 .movie-card {
   min-width: 30rem;
   width: 50vw;
-  /* padding: 1rem; */
   background-color: var(--bg-clr);
   display: grid;
   gap: 2rem;
   grid-template-columns: 0.6fr 1fr;
-  /* align-items: center; */
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   border-radius: 2rem;
 }
@@ -141,14 +171,13 @@ figure {
   margin: 0;
   padding: 0;
 }
+
 .movie-card img {
   width: 100%;
   height: 100%;
   margin: 0;
-  border-radius: 0;
   border-top-left-radius: 2rem;
   border-bottom-left-radius: 2rem;
-  /* border-radius: 0; */
   max-height: 50rem;
   height: auto;
 }
@@ -177,7 +206,6 @@ a {
   justify-content: center;
   margin-top: 2rem;
   padding: 3.2rem 1rem;
-  /* background-color: var(--text-clr); */
   color: var(--text-clr);
   border: 0.2rem solid var(--text-clr);
   font-size: 1.8rem;
@@ -190,21 +218,11 @@ a:hover {
   color: var(--bg-clr);
 }
 
-a:hover h2 {
-  color: var(--bg-clr);
-  transform: translateY(-1.5rem);
-  display: inline-block;
-}
-
-a:hover img {
-  transform: scale(1.1);
-}
-
 .back-btn {
   padding: 1.2rem 3.6rem;
 }
 
-/* responsive code   */
+/* Responsive code */
 @media (max-width: 1200px) {
   .container {
     margin: auto;
@@ -223,24 +241,19 @@ a:hover img {
   .grid-4-col {
     grid-template-columns: 1fr 1fr;
   }
-
   input {
     width: 25rem;
   }
-
   .movie-section {
     height: auto;
     padding: 4.8rem 0;
   }
-
   .movie-card {
     grid-template-columns: 1fr;
   }
-
   .card-content {
     padding-left: 2rem;
   }
-
   .back-btn {
     margin-bottom: 3rem;
   }

@@ -14,7 +14,12 @@ const AppProvider = ({ children }) => {
   const [searchquery, setSearchquery] = useState("");
 
   // List of popular movies
-  const popularMovies = ["Avengers", "Inception", "The Dark Knight", "Interstellar", "Titanic","Thor","Dilwale","Mohabbate","Tiger"];
+  const popularMovies = ["Avengers", "Inception", 
+                        "The Dark Knight", "Interstellar",
+                         "Titanic","Thor","Dilwale",
+                         "Mohabbate","Tiger","Drishyam","Down River",
+                         "God Father","Harry Potter"
+                        ];
 
   const getMovies = async (url) => {
     setIsLoading(true);
@@ -93,3 +98,7 @@ const useGlobalContext = () => {
 };
 
 export { AppContext, AppProvider, useGlobalContext };
+
+
+
+
